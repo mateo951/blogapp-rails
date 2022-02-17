@@ -22,10 +22,12 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
+  adapter: postgresql
   database: blogapp-rails
-  host: 127.0.0.1
+  host: localhost
   username: postgres
   password: <%= ENV['db_pss'] %>
+  port: 5432
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
