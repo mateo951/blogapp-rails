@@ -12,6 +12,7 @@
     </div>
   </div>
 </div>
+<%= button_to "Like Post", new_like_path, params: { like: {author_id: @post.author_id, post_id: @post.id } }, method: :post %>
 <div class="post_data flex-row">
   <div class="post_info">
   <%= render partial: 'shared/comment', :locals => { :user => @user, :comments => @comments } %>
