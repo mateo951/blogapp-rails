@@ -1,2 +1,19 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="post_data flex-row">
+  <div class="post_info">
+    <div class="flex-row in-between">
+      <h4>Post #<%= @post.id %> by <%= @user.name%></h4>
+      <div class="flex-row gap">
+        <h5 class"small_text">Comments: <%= @post.comments_counter %></h5>
+        <h5 class"small_text">Likes:<%= @post.likes_counter %></h5>
+      </div>
+    </div>
+    <div class="flex">
+    <h4 class=""><%= @post.text %></h4>
+    </div>
+  </div>
+</div>
+<div class="post_data flex-row">
+  <div class="post_info">
+  <%= render partial: 'shared/comment', :locals => { :user => @user, :comments => @post.recent_comments } %>
+  </div>
+</div> 

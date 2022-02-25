@@ -8,6 +8,6 @@ class Post < ApplicationRecord
   end
 
   def recent_comments()
-    posts.limit(3)
+    comments.last(5)
   end
 end
