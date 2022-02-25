@@ -3,6 +3,11 @@
   <%= @user.bio %>
 </div>
 <%= render :partial => 'posts/new' %>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
 <% @posts.each do |post| %>
   <%= render partial: 'posts/post', object: post %>
 <% end %>
