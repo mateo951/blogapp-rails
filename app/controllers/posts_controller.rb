@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @post = @user.posts.find(params[:post_id])
     @comments = @post.comments.all
   end
-  
+
   def new
     @user = User.find(params[:id])
     @post = Post.new
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     end
     redirect_back(fallback_location: root_path)
   end
-  
+
   def post_params
     params.require(:post).permit(:title, :text, :author_id, :comments_counter, :likes_counter)
   end
