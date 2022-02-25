@@ -3,8 +3,9 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  def update_posts_counter()
-    user.update(posts_counter: user.posts_counter + 1)
+  def self.update_counter(id)
+    @user = User.find(id)
+    @user.update(posts_counter: (@user.posts_counter + 1))
   end
 
   def recent_comments()
