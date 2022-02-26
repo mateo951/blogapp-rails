@@ -1,13 +1,14 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.recent_comments
+    @posts = @user.posts
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:post_id])
     @comments = @post.comments.all
+    @newPost = Post.new
   end
 
   def new
@@ -27,8 +28,10 @@ class PostsController < ApplicationController
     else
       flash[:error] = 'Error:  Post could not be saved'
     end
-    redirect_back(fallback_location: root_path)
+    redirect_to "/users/#{@post.author_id}/posts"
   end
+
+  private
 
   def post_params
     params.require(:post).permit(:title, :text, :author_id, :comments_counter, :likes_counter)

@@ -2,7 +2,7 @@
 <div class="bio_container">
   <%= @user.bio %>
 </div>
-<%= render :partial => 'posts/new' %>
+<%= link_to 'Create Post', new_post_path %>
 <% flash.each do |type, msg| %>
   <div>
     <%= msg %>
