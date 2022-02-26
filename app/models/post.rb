@@ -8,7 +8,6 @@ class Post < ApplicationRecord
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-
   def self.update_counter(id)
     @user = User.find(id)
     @user.update(posts_counter: (@user.posts_counter + 1))
