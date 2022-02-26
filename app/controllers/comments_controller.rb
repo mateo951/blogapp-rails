@@ -9,9 +9,15 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find_by_id(params[:post_id])
-    @post.comments.create(comment_params.merge(author_id: current_user.id))
-    Comment.update_counter(@post)
-    redirect_to "/users/#{@post.author_id}/posts/#{@post.id}"
+    @comment = @post.comments.create(comment_params.merge(author_id: current_user.id))
+    if @comment.save
+      flash[:success] = 'Comment saved successfully'
+      redirect_to "/users/#{@post.author_id}/posts/#{@post.id}"
+      Comment.update_counter(@post)
+    else
+      flash[:error] = 'Error: Comment could not be saved'
+      redirect_to "/users/#{@post.author_id}/posts/#{@post.id}"
+    end
   end
 
   private
