@@ -12,8 +12,15 @@
     </div>
   </div>
 </div>
+<%= link_to 'Create Comment', new_comment_path %>
+<%= button_to "Like Post", new_like_path, params: { like: {author_id: @post.author_id, post_id: @post.id } }, method: :post %>
 <div class="post_data flex-row">
   <div class="post_info">
-  <%= render partial: 'shared/comment', :locals => { :user => @user, :comments => @post.recent_comments } %>
+  <%= render partial: 'shared/comment', :locals => { :user => @user, :comments => @comments } %>
   </div>
 </div> 
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
