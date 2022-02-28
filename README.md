@@ -51,6 +51,12 @@ GitHub: [@mateo951](https://github.com/mateo951)<br>
 Twitter: [@MVGameDev](https://twitter.com/MVGameDev)<br>
 LinkedIn: [@Mateo Villagómez](https://www.linkedin.com/in/mateo-villagómez/)<br>
 
+👤 **Alejandro Ramos**
+
+- GitHub: [@AlexRS90](https://github.com/AlexRS90) <br>
+- Twitter: [@AlejandroRBenji](https://twitter.com/AlejandroRBenji)<br>
+- LinkedIn: [@AlexRS90](https://www.linkedin.com/in/alexrs90/)<br>
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
