@@ -2,4 +2,7 @@
   <div class="comment_padding">
     <%= user.name %>: <%= comment.text %>
   </div> 
+  <% if can? :destroy, comment %>
+    <%= link_to 'Delete', destroy_comment_path(current_user.id, @post.id, comment.id), method: :delete, data: {confirm: "Are you sure"}  %>
+  <% end %>
 <% end %> 
