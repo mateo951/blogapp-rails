@@ -81,12 +81,6 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
-    database_cleaner (2.0.1)
-      database_cleaner-active_record (~> 2.0.0)
-    database_cleaner-active_record (2.0.1)
-      activerecord (>= 5.a)
-      database_cleaner-core (~> 2.0.0)
-    database_cleaner-core (2.0.1)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -253,7 +247,6 @@ DEPENDENCIES
   byebug
   cancancan (~> 1.9)
   capybara (>= 3.26)
-  database_cleaner
   devise
   jbuilder (~> 2.7)
   pg (~> 1.1)
@@ -274,4 +267,4 @@ RUBY VERSION
    ruby 3.0.3p157
 
 BUNDLED WITH
-   2.3.7
+   2.3.8
