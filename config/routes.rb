@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/users/:user_id/posts/:post_id/destroy_comment', to: 'comments#destroy', as: 'destroy_comment' # destroy
+  get '/users/:user_id/posts/:post_id/destroy_post', to: 'posts#destroy', as: 'destroy_post' # destroy
 
   get '/users/:id/posts/new', to: 'posts#new', as: 'new_post' # new
   get '/users/:user_id/posts/:post_id/new_like', to: 'likes#new', as: 'new_like' # new

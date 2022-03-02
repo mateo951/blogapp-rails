@@ -30,6 +30,17 @@ class PostsController < ApplicationController
     redirect_to "/users/#{@post.author_id}/posts"
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @post = Post.find_by_id(params[:post_id])
+    if @post.destroy
+      flash[:success] = 'Post deleted successfully!'
+    else
+      flash[:error] = 'Something went wrong, please try it again!'
+    end
+    redirect_to "/users/#{@post.author_id}/posts"
+  end
+
   def post_params
     params.require(:post).permit(:title, :text, :author_id, :comments_counter, :likes_counter)
   end

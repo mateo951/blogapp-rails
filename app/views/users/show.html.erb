@@ -10,5 +10,8 @@
 <% end %>
 <% @posts.each do |post| %>
   <%= render partial: 'posts/post', object: post, locals: { user: @user }%>
+  <% if can? :destroy, post %>
+    <%= link_to 'Delete Post', destroy_post_path(@user.id, post.id, data: {confirm: 'Are you sure?'})  %>
+  <% end %>
 <% end %>
 <%= link_to 'See all post', "/users/#{@user.id}/posts" %>
