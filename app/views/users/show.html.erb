@@ -2,7 +2,9 @@
 <div class="bio_container">
   <%= @user.bio %>
 </div>
-<%= link_to 'Create Post', new_post_path %>
+<% if can? :read, @user %>
+  <%= link_to 'Create Post', new_post_path %>
+<% end %>
 <% flash.each do |type, msg| %>
   <div>
     <%= msg %>
