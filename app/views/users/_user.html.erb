@@ -4,6 +4,9 @@
     <div class="">
       <h2 id="username"><%= user.name %></h2>
     </div>
+    <% if request.fullpath == '/' || request.fullpath == '/users' %>
+      <%= link_to 'Profile', "/users/#{user.id}" %>
+    <% end %>
     <div class="number_posts">
       Number of posts: <%= user.posts_counter %>
     </div>

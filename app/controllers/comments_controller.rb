@@ -20,6 +20,18 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find_by_id(params[:post_id])
+    @user = User.find_by_id(params[:user_id])
+    @comment = @post.comments.find(params[:format])
+    if @comment.destroy
+      flash[:success] = 'Comment destroyed successfully'
+    else
+      flash[:error] = 'Error:  Comment could not be destroyed'
+    end
+    redirect_to "/users/#{@post.author_id}/posts/#{@post.id}"
+  end
+
   private
 
   def comment_params
