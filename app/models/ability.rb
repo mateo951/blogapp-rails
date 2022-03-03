@@ -7,7 +7,7 @@ class Ability
 
     return unless user.present?
 
-    can :read user: user.id
+    can :read, :all
     can :manage, Post, author_id: user.id
     can :manage, Comment, author_id: user.id
   end
