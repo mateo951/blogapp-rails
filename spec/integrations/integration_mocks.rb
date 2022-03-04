@@ -19,7 +19,7 @@ module Mocks
   def create_posts(users)
     users.each do |user|
       (1..5).each do |j|
-        Post.create(title: "Post number: #{j}", text: "This is post number: #{j}", comments_counter: 0,
+        Post.create(title: "Post # #{j}", text: "This is post number: #{j}", comments_counter: 0,
                     likes_counter: 0, author_id: user.id)
       end
     end
@@ -28,10 +28,10 @@ module Mocks
 
   def create_likes_comments(users, posts)
     posts.each do |post|
-      (0..1).each do |j|
-        Like.create(author_id: users[j].id, post_id: post.id)
-        Comment.create(author_id: users[j].id, post_id: post.id,
-                       text: "I'm #{users[j].name} and I'm commenting gibberish here.")
+      (0..1).each do |m|
+        Like.create(author_id: users[m].id, post_id: post.id)
+        Comment.create(author_id: users[m].id, post_id: post.id,
+                       text: "I'm #{users[m].name} and I'm commenting gibberish here.")
       end
     end
   end
