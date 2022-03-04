@@ -39,8 +39,7 @@ RSpec.describe 'user index view', type: :feature do
   end
   context 'User interacton of profile' do
     it "Redirected to user's show page" do
-      user_1 = User.first
-      expect(page).to have_content "Profile"
+      expect(page).to have_content 'Profile'
       click_link('Profile', match: :first)
       expect(page).to have_content "I'm the last oracle"
     end

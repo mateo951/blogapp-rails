@@ -55,7 +55,7 @@ RSpec.describe 'user index view', type: :feature do
   context 'redirecting properly to other paths' do
     it "When I click a user's post, it redirects me to that post's show page" do
       post = @users[0].recent_posts[0]
-      click_link("Full post", match: :first)
+      click_link('Full post', match: :first)
       expect(page).to have_current_path "/users/#{@users[0].id}/posts/#{post.id}"
     end
   end
