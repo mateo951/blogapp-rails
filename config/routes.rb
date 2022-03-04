@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   devise_for :users
 
   get '/users/:user_id/posts/:post_id/destroy_comment', to: 'comments#destroy', as: 'destroy_comment' # destroy
@@ -21,4 +23,7 @@ Rails.application.routes.draw do
   post '/users/:user_id/posts/:post_id/new_like', to: 'likes#create' # create
 
   root "users#index" 
+
+  get 'api/posts', to: "apiposts#index"
+  get 'api/comments', to: "apicomments#index"
 end

@@ -2,12 +2,27 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
+    render json: { success: true, data: { posts: @posts } }
+      # respond_to do |format|
+      #   format.html # index.html.erb
+      #   format.xml  { render :xml => @posts }
+      #   format.json { render :json => @posts }
+      # end
+      render json: { success: true, data: { posts: @posts } }
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:post_id])
     @comments = @post.comments.all
+    render json: { success: true, data: { posts: @comments } }
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.xml  { render :xml => @comments }
+    #   format.json { render :json => @comments }
+    # end
+
+
   end
 
   def new
