@@ -1,0 +1,8 @@
+<% comments.each do |comment| %>
+  <div class="comment_padding">
+    <%= user.name %>: <%= comment.text %>
+  </div> 
+  <% if can? :destroy, comment %>
+    <%= link_to 'Delete', destroy_comment_path(current_user.id, @post.id, comment.id), data: {confirm: "Are you sure"}  %>
+  <% end %>
+<% end %> 

@@ -2,7 +2,9 @@ class Comment < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :post, class_name: 'Post'
 
-  def update_comments_counter()
-    post.update(comments_counter: post.comments_counter + 1)
+  validates :text, presence: true
+
+  def self.update_counter(post)
+    post.update(comments_counter: (post.comments_counter + 1))
   end
 end

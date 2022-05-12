@@ -1,3 +1,81 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.center_content {
+  text-align: center;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gap {
+  gap: 10px;
+}
+
+.post_data {
+  margin: auto;
+  justify-content: space-between;
+}
+
+.img_content {
+  margin-left: 20px;
+}
+
+.user_img {
+  height: 100px;
+}
+
+.post_info {
+  width: 100%;
+  margin: 20px;
+  border: solid 1px gray;
+  gap: 20%;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+}
+
+.bio_container {
+  margin: 20px;
+  padding: 20px;
+  border: solid 1px gray;
+  text-align: center;
+  min-height: 20px;
+}
+
+.small_text {
+  font-size: 13px;
+}
+
+.post_text_style {
+  margin: 0;
+}
+
+.right-content {
+  justify-content: right;
+}
+
+.in-between {
+  justify-content: space-between;
+}
+
+.comments_container {
+  width: 100%;
+  margin: 0 20px;
+  border: solid 1px gray;
+  gap: 20%;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+}
+
+.comment_padding {
+  padding: 3px 0;
+}
+
+.col-flex {
+  flex-direction: column;
+}

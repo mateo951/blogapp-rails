@@ -1,2 +1,7 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<%= render partial: 'users/user', object: @user %>
+<% @posts.each do |post| %>
+  <%= render partial: 'posts/post', object: post %>
+  <div class="comments_container">
+    <%= render partial: 'shared/comment', :locals => { :user => @user, :comments => post.recent_comments }  %>
+  </div>
+<% end %>

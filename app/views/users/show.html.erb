@@ -1,2 +1,19 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render partial: 'user', object: @user %>
+<div class="bio_container">
+  <%= @user.bio %>
+</div>
+<% if can? :read, @user %>
+  <%= link_to 'Create Post', new_post_path %>
+<% end %>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<% @posts.each do |post| %>
+  <%= render partial: 'posts/post', object: post, locals: { user: @user }%>
+  <% if can? :destroy, post %>
+    <%= link_to 'Delete Post', destroy_post_path(@user.id, post.id, data: {confirm: 'Are you sure?'})  %>
+  <% end %>
+<% end %>
+<%= link_to 'See all post', "/users/#{@user.id}/posts" %>
