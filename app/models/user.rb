@@ -5,5 +5,6 @@ class User < ApplicationRecord
 
   def recent_posts()
     posts.limit(3)
+    posts.order('created_at Desc').limit(3)
   end
 end
